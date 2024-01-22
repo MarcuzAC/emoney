@@ -1,0 +1,126 @@
+// Global styles
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3498db; /* Blue color for the navbar */
+  color: white;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+
+  li {
+    margin-right: 20px;
+  }
+}
+
+// Page-specific styles
+.home-page,
+.product-details-page,
+.login-page,
+.register-page {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ecf0f1; /* Light blue background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-page,
+.register-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Set the height to the full viewport height */
+}
+
+.form-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #ecf0f1; /* Light blue background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  form {
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db; /* Blue color for the button */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.login-link,
+.register-link {
+  margin-left: auto; /* Push these links to the right */
+}
+
+// Additional styles for profile picture section
+.profile-picture-section {
+  text-align: center;
+
+  .file-input-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    .file-input-label {
+      display: block;
+      background-color: #3498db; /* Blue color for the button */
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .file-input {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .rounded-profile-preview {
+      margin-top: 10px;
+      width: 50px; /* Set the desired width */
+      height: 50px; /* Set the desired height */
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%; /* Ensure rounded corners */
+      }
+    }
+  }
+}

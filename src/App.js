@@ -1,25 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
+// App.js
+
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import ProductDetails from './components/ProductDetails';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import './style.scss';
 
 function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:5000/api/products')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
+  const [token, setToken] = useState('');
 
   return (
-    <div className="App">
-      <h1>E-commerce App</h1>
-      <ul>
-        {data.map(product => (
-          <li key={product._id}>{product.name}</li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li className="login-link">
+              <Link to="/login">Login</Link>
+            </li>
+            <li className="register-link">
+              <Link to="/register">Register</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/product/:productId" element={<ProductDetails token={token} />} />
+          <Route path="/login" element={<Login setToken={setToken} />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
