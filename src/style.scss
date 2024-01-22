@@ -1,4 +1,4 @@
-// Global styles
+/* Global styles */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -26,7 +26,7 @@ ul {
   }
 }
 
-// Page-specific styles
+/* Page-specific styles */
 .home-page,
 .product-details-page,
 .login-page,
@@ -81,7 +81,7 @@ ul {
   margin-left: auto; /* Push these links to the right */
 }
 
-// Additional styles for profile picture section
+/* Additional styles for profile picture section */
 .profile-picture-section {
   text-align: center;
 
@@ -122,5 +122,53 @@ ul {
         border-radius: 50%; /* Ensure rounded corners */
       }
     }
+  }
+}
+// style.scss
+
+.admin-product-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px; /* Set a minimum height for the textarea */
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #297fb8;
   }
 }
